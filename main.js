@@ -13,6 +13,7 @@ prevDom.onclick = function () {
 let timeRunning = 3000;
 let timeAutoNext = 7000;
 let runTimeOut;
+let runBack;
 let runAutoRun = setTimeout(() => {
   nextDom.click();
 }, timeAutoNext);
@@ -35,9 +36,13 @@ function showSlider(type) {
   clearTimeout(runTimeOut);
   runTimeOut = setTimeout(() => {
     carouselDom.classList.remove(`next`);
-    carouselDom.classList.remove(`prev`);
   }, timeRunning);
-
+  /* ==================== o0o ====================  */
+  clearTimeout(runBack);
+  runBack = setTimeout(() => {
+    carouselDom.classList.remove(`prev`);
+  }, 500);
+  /* ==================== o0o ====================  */
   clearTimeout(runAutoRun);
   runAutoRun = setTimeout(() => {
     nextDom.click();

@@ -113,7 +113,7 @@ header a {
   bottom: 10px;
   left: 10px;
   right: 10px;
-  max-width: 130px;
+  /* max-width: 130px; */
   overflow: hidden;
 }
 .thumbnail .item .content .title {
@@ -278,8 +278,7 @@ header a {
   top: 0;
   left: 0;
 }
-.carousel.next .time,
-.carousel.prev .time {
+.carousel.next .time {
   width: 100%;
   animation: timeRunning 2s linear 1 forwards;
 }
@@ -288,6 +287,37 @@ header a {
     width: 0;
   }
 }
+/* ==================== o0o ====================  */
+.carousel.prev .time {
+  width: 100%;
+  animation: timeBack 0.4s linear 1 forwards;
+}
+@keyframes timeBack {
+  to {
+    width: 0;
+  }
+}
+.carousel .thumbnail .item .content .title,
+.carousel .thumbnail .item .content .des {
+  opacity: 0;
+  animation: showThumbnailContent 1s linear 1 forwards;
+}
+@keyframes showThumbnailContent {
+  to {
+    opacity: 1;
+  }
+}
+.carousel .thumbnail .item .content .title,
+.carousel .thumbnail .item .content .des {
+  animation-delay: 1s;
+}
+button {
+  cursor: pointer;
+}
+button:active {
+  scale: 0.98;
+}
+/* ==================== o0o ====================  */
 @media screen and (max-width: 678px) {
   .carousel .list .item .content {
     padding-right: 0;
