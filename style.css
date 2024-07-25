@@ -208,7 +208,7 @@ header a {
 }
 .carousel.next .thumbnail .item:nth-last-child(1) {
   width: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   animation: showThumbnail 0.5s linear 1 forwards;
 }
 @keyframes showThumbnail {
@@ -324,5 +324,44 @@ button:active {
   }
   .carousel .list .item .content .title {
     font-size: 30px;
+  }
+}
+/* ==================== o0o ====================  */
+/* for phones */
+@media screen and (max-width: 766.98px) {
+  /* carousel */
+  .carousel .list .item .content .title,
+  .carousel .list .item .content .topic {
+    font-weight: bold;
+    font-size: 1.8rem;
+    list-style: 0.9rem;
+  }
+
+  .carousel .list .item .content .des {
+    display: none;
+  }
+  .carousel .list .item .content .buttons {
+    display: grid;
+    grid-template-columns: 130px;
+    grid-template-rows: repeat(2, 40px);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .carousel .list .item .content button {
+    border: none;
+    background-color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #d82d0f;
+  }
+  .arrows {
+    position: absolute;
+    top: 70%;
+    right: 55%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
 }
